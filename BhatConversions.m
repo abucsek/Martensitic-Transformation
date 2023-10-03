@@ -21,7 +21,7 @@
 % NOTE: m and n are B2 hkls
 
 
-function [Output, Bhat] = BhatConversions(cubicQuat,a0lat,alat,blat,clat,betadeg)
+function [Output] = BhatConversions(cubicQuat,a0lat,alat,blat,clat,betadeg)
 
 
 %% Defined Constants
