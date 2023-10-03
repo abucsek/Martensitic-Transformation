@@ -4,7 +4,8 @@
 %
 % Written by Ashley Bucsek, Colorado School of Mines, 2016
 %
-% Input = cubicOrientationQuaternion, B2 and B19' lattice parameters
+% Input = cubic orientation (quaternion format), B2 lattice parameter, B19' lattice parameters
+% Example: Output = BhatConversions([1 0 0 0], 3.015, 2.9, 3.1, 4.6, 98.6);
 %
 % Output = array(192, 18);
 % 1:6     CV1    CV2    quatCV1_1 quatCV1_2 quatCV1_3 quatCV1_4   ...
@@ -12,16 +13,16 @@
 % 14:19   n1 n2 n3     LambdaCV1     strain    stressStrainWork
 %
 % Translation of Output ^:
-% CV1 is CV i, CV2 j, quat is the quaternion of the monoclinic orientation
-% of the CV (first i's then j's), m is the habit plane, n is the twin
-% plane, lambda is the twin phase fraction of CV i, strain is the transformation 
-% strain in the axial direction (y), and stressStrainWork is the work
+% "CV1" is CV i, "CV2" is CV j, "quat" is the quaternion of the monoclinic orientation
+% of the CV (first CV i's quaternion, then CV j's), "m" is the habit plane, "n" is the twin
+% plane, "lambda" is the twin phase fraction of CV i, "strain" is the transformation 
+% strain in the y-direction (the loading direction), and "stressStrainWork" is the work
 % produced
 % 
-% NOTE: m and n are B2 hkls
+% NOTE: "m" and "n" are B2 hkls
 
 
-function [Output] = BhatConversions(cubicQuat,a0lat,alat,blat,clat,betadeg)
+function Output = BhatConversions(cubicQuat,a0lat,alat,blat,clat,betadeg)
 
 
 %% Defined Constants
