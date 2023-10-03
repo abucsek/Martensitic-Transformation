@@ -5,7 +5,7 @@
 % Written by Ashley Bucsek, Colorado School of Mines, 2016
 %
 % Input = cubic orientation (quaternion format), B2 lattice parameter, B19' lattice parameters
-% Example: Output = BhatConversions([1 0 0 0], 3.015, 2.9, 3.1, 4.6, 98.6);
+% Example: Output = BhatConversions([[1 0 0 0], 3.015, 2.889, 4.120 , 4.622, 96.80);
 %
 % Output = array(192, 18);
 % 1:6     CV1    CV2    quatCV1_1 quatCV1_2 quatCV1_3 quatCV1_4   ...
